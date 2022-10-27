@@ -11,7 +11,8 @@ const property = new Schema({
     },
 
     User: {
-        type: mongoose.Schema.Types.ObjectId, ref: 'user'
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'user'
     },
 
 },

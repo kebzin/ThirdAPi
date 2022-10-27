@@ -2,21 +2,36 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const locationSchema = new Schema({
-    locationName: {
-        type: String,
-        required: true,
-        trim: true,
-     
-        
-    },
+
     locationImage:{
         type: String,
-        required: true,
+        trim: true, 
+    },
+    longititude:{
+        type: String,
         trim: true,
-        lowercase: true,
-        
+    },
+    latitude:{
+        type: String,
+        trim: true,
+    },
+    country:{
+        type: String,
+        trim: true,
+    },
+    city:{
+        type: String,
+        trim: true,
+    },
+    currency:{
+        type: String,
+        trim: true,
+    },
+    place:{
+        type:String,
         
     },
+
     user:{
         type:mongoose.Schema.Types.ObjectId, ref: 'user'
     }

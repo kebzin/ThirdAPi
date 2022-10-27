@@ -30,9 +30,20 @@ const category = new Schema({
         required: true,
     },
      location:{
-        type:mongoose.Schema.Types.ObjectId, ref: 'location'
+        type:mongoose.Schema.Types.ObjectId,
+         ref: 'location'
+     },
+     propertiesID:{
+        type: mongoose.Schema.Types.ObjectId,  
+        ref: 'property'
      },
    
+     propertiesImage:[
+        {
+            type: String,
+            
+        }
+     ]
 },
 {timestamps: true}
 );
@@ -40,4 +51,6 @@ const category = new Schema({
 
 const Category = mongoose.model('category', category);
 
-modules.exports = exports
+
+module.exports = Category;
+
