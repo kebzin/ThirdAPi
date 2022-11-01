@@ -29,8 +29,17 @@ const locationSchema = new Schema({
     },
     place:{
         type:String,
-        
+
     },
+    drivingDist:{
+        type:String,
+        trim: true,
+    },
+    walkingDist:{
+        type:String,
+        trim: true,
+    },
+
 
     user:{
         type:mongoose.Schema.Types.ObjectId, ref: 'user'

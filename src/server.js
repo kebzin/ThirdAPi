@@ -16,7 +16,12 @@ const connection = async () => {
     }
 }
 
-module.exports = {
-    connection,
+const db = ()=>{mongoose.connect(URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+   
+});
 }
+
+module.exports = {connection, db}
 
