@@ -16,6 +16,9 @@ const signup =  async (req, res, next)=> {
                 error: 'User already exists please login'
             })
         }
+
+         // if the user is not signed up then create a new user
+                // then hash the user password :: exaple 12345= "ertyuifogfjhdgfs34567ydgfb"
         const users = await User.create({...content})
             return res.status(201).json({data: users})
     } catch (error) {
@@ -28,8 +31,7 @@ const signup =  async (req, res, next)=> {
     }
 
 
-    // if the user is not signed up then we need to create a new 
-                // then hash the user password :: exaple 12345= "ertyuifogfjhdgfs34567ydgfb"
+   
 }
 const login = async (req, res, next) => {
     const content = req.body
@@ -41,7 +43,7 @@ const login = async (req, res, next) => {
        }
        
        const {password, ...others} = user // the user password will not be send when returning the data
-         const token = await jwt.sign({_id: user._id}, "secretkey") // giving access token to the user when login succesfull
+         const token = await jwt.sign({id: user._id}, "secretkey") // giving access token to the user when login succesfull
          res.cookie('accessToken', token,{
             httpOnly: true,
             // maxAge: 1000*60*60*24*365,

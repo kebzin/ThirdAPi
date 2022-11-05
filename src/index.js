@@ -13,12 +13,19 @@ const authRouter = require('./routers/auth');
 // auther authentication 
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
+const { request } = require('express');
 
 
 // middleware
+app.use((req, res, next)=>{
+  req.header("Access-Control-Credentials", true); // giving acces to my local host 3000
+  next();
+})
 app.use(express.json())
-// app.use(cors())
-// app.use(cookieParser())
+app.use(cors({
+  origin: "http://localhost:3000",
+}))
+app.use(cookieParser())
 
 const PORT = 3005
 

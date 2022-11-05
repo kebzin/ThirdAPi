@@ -25,7 +25,7 @@ const category = new Schema({
         required: true,
     },
     
-    categoryDescription: {
+    Description: {
         type: String,
         required: true,
     },
@@ -35,7 +35,7 @@ const category = new Schema({
      },
      propertiesID:{
         type: mongoose.Schema.Types.ObjectId,  
-        ref: 'property'
+        ref: 'property' 
      },
    
      propertiesImage:[
